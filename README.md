@@ -5,9 +5,7 @@ comes with a handy CLI.
 
 ## Preview
 
-<center>
 ![preview](preview.png)
-</center>
 
 ## Usage
 
