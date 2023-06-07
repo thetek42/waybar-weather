@@ -337,7 +337,7 @@ def daily_forecast():
         # print data
         print(f'\x1b[1m{day}\x1b[0m ({data["weekday"]}):')
         print_entry('weather',  f'\x1b[32m{data["weather_average"]}\x1b[0m', indent = 2)
-        print_entry('temp',     f'\x1b[33m{data["min_temperature"]} °C\x1b[0m / \x1b[33m{data["max_temperature"]} °C\x1b[0m', indent = 2)
+        print_entry('temp',     f'\x1b[33m{data["max_temperature"]} °C\x1b[0m / \x1b[33m{data["min_temperature"]} °C\x1b[0m', indent = 2)
         print_entry('humidity', f'\x1b[31m{data["humidity_average"]} % RH\x1b[0m', indent = 2)
         print_entry('wind',     f'\x1b[35m{data["wind_average"]} m/s\x1b[0m', indent = 2)
         print_entry('rain',     f'\x1b[34m{data["rainfall_total_estimated"]} mm\x1b[0m' +
@@ -443,9 +443,9 @@ def waybar_forecast(data: dict) -> str:
     for day in sorted(daily_data):
         data = daily_data[day]
 
-        line_content = colorize(f'{data["min_temperature"]:2}°', ORANGE) + \
+        line_content = colorize(f'{data["max_temperature"]:2}°', ORANGE) + \
                        colorize(' / ', GRAY) + \
-                       colorize(f'{data["max_temperature"]:2}°', ORANGE) + \
+                       colorize(f'{data["min_temperature"]:2}°', ORANGE) + \
                        colorize(', ', GRAY) + \
                        colorize(data['weather_average'], YELLOW)
 
