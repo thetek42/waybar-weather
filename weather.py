@@ -421,7 +421,7 @@ def waybar_current(data: dict) -> str:
     output = ''
     output += waybar_entry('weather',  colorize(weather, YELLOW))
     output += waybar_entry('temp',     f'{colorize(f"{temperature} °C", ORANGE)}{colorize(", feels like ", GRAY)}{colorize(f"{temperature_felt} °C", ORANGE)}')
-    output += waybar_entry('humditiy', colorize(f'{humidity} % RH', RED))
+    output += waybar_entry('humidity', colorize(f'{humidity} % RH', RED))
     output += waybar_entry('wind',     f'{colorize(f"{wind_speed} m/s", PURPLE)} {colorize(f"({wind_direction})", GRAY)}')
     output += waybar_entry('rain',     colorize(f"{rainfall} mm", BLUE))
     return output
